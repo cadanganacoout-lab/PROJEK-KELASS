@@ -1,3 +1,5 @@
+        alert("Disarankan Membuka Web Ini Menggunkan Mode Desktop.");
+        
         // Loading Screen
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
