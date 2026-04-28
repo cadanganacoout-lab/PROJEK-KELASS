@@ -1,4 +1,4 @@
-        alert("Disarankan Membuka Web Ini Menggunkan Mode Desktop.");
+        // alert("Disarankan Membuka Web Ini Menggunkan Mode Desktop.");
         
         // Loading Screen
         window.addEventListener('load', () => {
@@ -148,6 +148,54 @@
                 alert(`Galeri: ${overlay}\nKlik untuk melihat foto lengkap!`);
             });
         });
+
+        // Horizontal scroll with mouse wheel for video section
+        const videoScrollContainer = document.getElementById('videoScrollContainer');
+        if (videoScrollContainer) {
+            videoScrollContainer.addEventListener('wheel', (e) => {
+                if (e.deltaY !== 0) {
+                    e.preventDefault();
+                    videoScrollContainer.scrollLeft += e.deltaY;
+                }
+            }, { passive: false });
+        }
+
+        // YouTube IFrame Player API
+        var ytPlayers = [];
+
+        function onYouTubeIframeAPIReady() {
+            // Initialize players for all video iframes
+            const playerIds = ['yt-player-1', 'yt-player-2', 'yt-player-3', 'yt-player-4', 'yt-player-5', 'yt-player-6', 'yt-player-7', 'yt-player-8', 'yt-player-9', 'yt-player-10', 'yt-player-11', 'yt-player-12'];
+            
+            playerIds.forEach((id, index) => {
+                const iframe = document.getElementById(id);
+                if (iframe) {
+                    ytPlayers.push(new YT.Player(id, {
+                        events: {
+                            'onReady': onPlayerReady,
+                            'onStateChange': onPlayerStateChange
+                        }
+                    }));
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            // Player is ready - you can add auto-play logic here if needed
+            console.log('YouTube Player ready:', event.target);
+        }
+
+        function onPlayerStateChange(event) {
+            // Handle player state changes
+            // For example: pause other players when one starts playing
+            if (event.data === YT.PlayerState.PLAYING) {
+                ytPlayers.forEach(player => {
+                    if (player !== event.target && player.pauseVideo) {
+                        player.pauseVideo();
+                    }
+                });
+            }
+        }
 
         // PWA Service Worker (Optional)
         if ('serviceWorker' in navigator) {
