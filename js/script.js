@@ -89,13 +89,23 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    // pastikan animasi fade-in dari bawah selalu terjadi saat masuk layar
+                    entry.target.classList.add('fade-in');
+                    entry.target.classList.add('aos-animate');
+                } else {
+                    // biar saat discroll ke atas animasi bisa ter-trigger lagi saat kembali masuk
+                    entry.target.classList.remove('aos-animate');
+                    entry.target.classList.remove('visible');
                 }
             });
         }, observerOptions);
 
         document.querySelectorAll('.fade-in').forEach(el => {
+            // jaga agar state awal sesuai CSS fallback
+            el.classList.remove('visible');
             observer.observe(el);
         });
+
 
         // Scroll to Top Button
         const scrollTopBtn = document.getElementById('scrollTop');

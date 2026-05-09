@@ -764,7 +764,58 @@ section {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    /* Navbar */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 64px; /* tinggi kira-kira navbar */
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+
+        flex-direction: column;
+        gap: 0.25rem;
+
+        padding: 1rem 6%;
+        background: rgba(3, 3, 5, 0.92);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(86, 95, 170, 0.25);
+
+        transform: translateY(-10px);
+        opacity: 0;
+        pointer-events: none;
+
+        transition: transform 0.25s ease, opacity 0.25s ease;
+        z-index: 999;
+
+        display: flex; /* override desktop flex */
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 0.9rem 0;
+        font-size: 1rem;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    /* Video */
     .video-card {
         width: 85vw;
     }
 }
+
