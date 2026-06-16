@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas X RPL - SMK PGRI 2 PONOROGO | Rekayasa Perangkat Lunak</title>
+    <meta name="description" content="Website Resmi Kelas X RPL SMK PGRI 2 PONOROGO - Membangun Generasi Teknologi Masa Depan">
+    <meta name="keywords" content="X RPL, SMK PGRI 2 PONOROGO, Rekayasa Perangkat Lunak, Pemrograman, Teknologi, sterida, ponorogo, smk, pgri, kasus">
+    <meta name="author" content="Kelas X RPL SMK PGRI 2 PONOROGO">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kelas X RPL - SMK PGRI 2 PONOROGO | Rekayasa Perangkat Lunak">
+    <meta property="og:description" content="Website Resmi Kelas X RPL SMK PGRI 2 PONOROGO">
+    <meta property="og:image" content="../asset/og_logo/xrpl.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://webxrplstd.vercel.app/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../asset/logo/favicon.ico">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+<script src="../js/script.js" defer></script>
+    <script src="../js/sidebar-nav.js" defer></script>
+    <!-- <link rel="stylesheet" href="css/aos-fade.css"> -->
+</head>
+<body>
+<!-- Sidebar (replaces navbar) -->
+        <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <div class="profile-mini">
+                <div class="profile-img-wrap">
+                    <img src="../asset/logo/LOGO.jpeg" alt="Gilang" loading="lazy">
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="profile-info">
+                    <h3>X RPL 1  </h3>
+                    <p>Generasi Masa Depan</p>
+                </div>
+            </div>
+
+            <div class="clock" id="clock">00:00:00</div>
+
+            <nav class="sidebar-nav">
+                <a href="../index.html" class="nav-item active" data-section="beranda">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="siswa.html" class="nav-item" data-section="tentang">
+                    <i class="fas fa-user"></i>
+                    <span>Siswa</span>
+                </a>
+                <a href="guru.html" class="nav-item" data-section="keterampilan">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Guru</span>
+                </a>
+                <a href="galeri.html" class="nav-item" data-section="proyek">
+                    <i class="fas fa-image"></i>
+                    <span>Galeri</span>
+                </a>
+                <a href="video.html" class="nav-item" data-section="sertifikat">
+                    <i class="fas fa-video-camera"></i>
+                    <span>Vidio</span>
+                </a>
+                <a href="alamat.html" class="nav-item" data-section="kontak">
+                    <i class="fas fa-map"></i>
+                    <span>Alamat</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="sound-toggle" id="sound-toggle" title="Toggle Sound">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header" id="mobile-header">
+        <div class="mobile-logo">X RPl 1<span>.</span></div>
+        <div class="mobile-actions">
+            <button class="theme-toggle-mobile" id="theme-toggle-mobile">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <img src="../asset/logo/rpl.webp" alt="Gilang">
+            <div>
+                <h4>X RPL 1</h4>
+                <p>Generasi Masa Depan</p>
+            </div>
+            <button class="mobile-nav-close" id="mobile-nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="../index.html" class="mobile-nav-item" data-section="beranda">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="siswa.html" class="mobile-nav-item" data-section="tentang">
+                <i class="fas fa-user"></i> Siswa
+            </a>
+            <a href="guru.html" class="mobile-nav-item" data-section="keterampilan">
+                <i class="fas fa-chalkboard-teacher"></i> Guru
+            </a>
+            <a href="galeri.html" class="mobile-nav-item" data-section="proyek">
+                <i class="fas fa-image"></i> Galeri
+            </a>
+            <a href="video.html" class="mobile-nav-item" data-section="sertifikat">
+                <i class="fas fa-video-camera"></i> Videos
+            </a>
+            <a href="alamat.html" class="mobile-nav-item" data-section="kontak">
+                <i class="fas fa-map"></i> Alamat
+            </a>
+        </div>
+        <div class="mobile-nav-social">
+            <a href="https://youtube.com/@rplsterida42?si=cGFB7m168Uk1rV2s" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/codingbudrek/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+
+    
+    <main class="page">
+
+        <!-- Video Section -->
+    <section class="video-section" id="sertifikat">
+        <div class="section-header fade-in">
+            <h2>Video Kegiatan</h2>
+            <p>Dokumentasi video kegiatan kelas X RPL</p>
+        </div>
+        <div class="video-scroll-container" id="videoScrollContainer">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/m8PGMHXMstw?si=oU4Ez0puilOKRk_j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS IPAS, PODCAST REMAJA STERIDA-KELOMPOK 2</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fomuBMTB5hs?si=jqXD-Ic_nQIB0tHS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS IPAS, PODCAST REMAJA STERIDA-KELOMPOK 3</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4Mul3bb4_WI?si=RIGKy_ygUKulFwgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS IPAS, PODCAST REMAJA STERIDA-KELOMPOK 5</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9ujA_ZNEcRc?si=bKN2JbPbD_uuuXte" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS IPAS, PODCAST REMAJA STERIDA-KELOMPOK 1</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Vk_uDWUSOuo?si=8enUJSIRRm7qP91G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS IPAS, PODCAST REMAJA STERIDA-KELOMPOK 6</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4rU3nFkvipQ?si=gS1s2Om5eUUb__tr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS IPAS, PODCAST REMAJA STERIDA-KELOMPOK 7</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mdycE2tlPX4?si=hRcuklq4fUfmlZgD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS IPAS, PODCAST REMAJA STERIDA-KELOMPOK 8</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/meDKTZ1YdEo?si=_sDK-R9vkudVRytL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS IPAS, PODCAST REMAJA STERIDA-KELOMPOK 4</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/IKqDMs9O22A?si=9knT9EEXr0I_7hn6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>PT. GAMELAB SALATIGA, STERIDA KUNJUNGAN INDUSTRI 2026</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe id="yt-player-1" width="560" height="315" src="https://www.youtube.com/embed/jrKYrzMRLKY?si=GZDduVHq7ud5KaLb"   title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>PT. ASTRAGRAPHIA JAKARTA, STERIDA KUNJUNGAN INDUSTRI 2026</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe id="yt-player-1" width="560" height="315" src="https://www.youtube.com/embed/JSjp0qdOrhU?si=p0wS4B31186-gv_g"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS INFORMATIKA, KOKURIKULER ECOPRINT-KELOMPOK 6</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe id="yt-player-1" width="560" height="315" src="https://www.youtube.com/embed/1dzLr_jYjSk?si=p2Owx0zVu55efvH7"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS INFORMATIKA, KOKURIKULER ECOPRINT-KELOMPOK 4</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe id="yt-player-2" width="560" height="315" src="https://www.youtube.com/embed/eZfZ70p2d40?si=DIIQXTrHo1IcIpmr" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS INFORMATIKA, KOKURIKULER ECOPRINT-KELOMPOK 2</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe id="yt-player-3" width="560" height="315" src="https://www.youtube.com/embed/PjFZoJ6tjcE?si=-OUWL8BuI3u0LwRc" title="Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS INFORMATIKA, KOKURIKULER ECOPRINT-KELOMPOK 3</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe id="yt-player-4" width="560" height="315" src="https://www.youtube.com/embed/RBJ51JXEsCE?si=i0GKFm3H6VcwUyRp" title="Video 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS INFORMATIKA, KOKURIKULER ECOPRINT-KELOMPOK 5</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe id="yt-player-5" width="560" height="315" src="https://www.youtube.com/embed/as5K6CLsZ3U?si=2fl-vBy03sif2fDM" title="Video 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS INFORMATIKA, KOKURIKULER ECOPRINT-KELOMPOK 1</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe id="yt-player-6" width="560" height="315" src="https://www.youtube.com/embed/_37Q372oCN0?si=UZfLX4sDDQ5dE7eR" title="Video 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS SENAM IRAMA PJOK, —KELOMPOK 3—</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe id="yt-player-7" width="560" height="315" src="https://www.youtube.com/embed/4d_gBm2nfeE?si=CTrJUhgDN09ZoyIw" title="Video 7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS SENAM IRAMA PJOK, —KELOMPOK 1—</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe id="yt-player-8" width="560" height="315" src="https://www.youtube.com/embed/lY4tZ2UVyQ4?si=Oh18E0UykxE7-laU" title="Video 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS SENAM IRAMA PJOK, —KELOMPOK 5—</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe id="yt-player-9" width="560" height="315" src="https://www.youtube.com/embed/WTjDbSP8ra4?si=DgCZjkNYYwe7Ti0H"  title="Video 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS SENAM IRAMA PJOK, —KELOMPOK 2—</h4>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe id="yt-player-10" width="560" height="315" src="https://www.youtube.com/embed/TWaH1cEmxS4?si=RYRcVxqpGdsN3BJf" title="Video 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>TUGAS SENAM IRAMA PJOK, —KELOMPOK 4—</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="sertifikat"  >
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>X RPL SMK PGRI 2 PONOROGO</h3>
+                <p>Kelas unggulan Rekayasa Perangkat Lunak yang siap mencetak generasi developer masa depan Indonesia.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/codingbudrek//"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="#"><i class="fab fa-whatsapp"></i></a> -->
+                    <a href="www.youtube.com/@RPLsterida42"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/cadanganacoout-lab"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="../index.html">Beranda</a>
+                <a href="siswa.html">Siswa</a>
+                <a href="guru.html">Guru</a>
+                <a href="galeri.html">Galeri</a>
+                <a href="vidio.html">Video</a>
+                <a href="profil.html">Profil</a>
+            </div>
+            <div class="footer-section">
+                <h3>Pelajaran</h3>
+                <a href="information/rpl.html">Rekayasa Perangkat Lunak</a>
+                <a href="information/pemrograman-web.html">Pemograman Web</a>
+                <a href="information/basis-data.html">Basis Data</a>
+                <a href="information/jaringan-komputer.html">Jaringan Komputer</a>
+                <a href="information/pemrograman-berorientasi-objek.html">Pemrograman Berorientasi Objek</a>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><i class="fas fa-phone"></i> 0352-461-821 </p>
+                <p><i class="fas fa-envelope"></i> smkpgri2_ponorogo@yahoo.co.id</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Soekarno - Hatta, Kertosari, Kec. Babadan, Kabupaten Ponorogo, Jawa Timur</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kelas X RPL SMK PGRI 2 PONOROGO. Dibuat oleh <bold>GILANG NUR MAULIDA FAID</bold>.</p>
+        </div>
+    </footer>
+    </body>
+</html>

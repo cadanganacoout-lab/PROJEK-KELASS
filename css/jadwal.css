@@ -1,0 +1,105 @@
+/* Jadwal & Piket styles */
+
+.jadwal-section,
+.piket-section {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.table-container {
+  margin-top: 1.5rem;
+}
+
+.table-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 16px;
+  background: rgba(10, 10, 18, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.85rem 0.9rem;
+  text-align: center;
+}
+
+.schedule-table thead th {
+  color: #f8fafc;
+  font-weight: 700;
+  background: rgba(8, 12, 26, 0.92);
+}
+
+.schedule-table tbody td {
+  color: #cbd5e1;
+  background: rgba(3, 5, 12, 0.35);
+}
+
+.schedule-subject {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.schedule-subject .mata {
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.schedule-subject .guru {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.today-highlight {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    rgba(29, 78, 216, 0.30),
+    rgba(56, 189, 248, 0.18)
+  ) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(56, 189, 248, 0.55),
+    0 0 24px rgba(56, 189, 248, 0.18);
+}
+
+
+.today-highlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 0;
+  border: 2px solid rgba(56, 189, 248, 0.78);
+  mix-blend-mode: screen;
+}
+
+@media (max-width: 768px) {
+  .schedule-table {
+    min-width: 620px;
+  }
+
+  .table-wrapper {
+    border-radius: 14px;
+  }
+}
+
+

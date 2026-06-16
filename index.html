@@ -1,0 +1,346 @@
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas X RPL - SMK PGRI 2 PONOROGO | Rekayasa Perangkat Lunak</title>
+    <meta name="description" content="Website Resmi Kelas X RPL SMK PGRI 2 PONOROGO - Membangun Generasi Teknologi Masa Depan">
+    <meta name="keywords" content="X RPL, SMK PGRI 2 PONOROGO, Rekayasa Perangkat Lunak, Pemrograman, Teknologi, sterida, ponorogo, smk, pgri, kasus">
+    <meta name="author" content="Kelas X RPL SMK PGRI 2 PONOROGO">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kelas X RPL - SMK PGRI 2 PONOROGO | Rekayasa Perangkat Lunak">
+    <meta property="og:description" content="Website Resmi Kelas X RPL SMK PGRI 2 PONOROGO">
+    <meta property="og:image" content="asset/og_logo/xrpl.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://webxrplstd.vercel.app/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="asset/logo/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/jadwal.css">
+    <!-- <link rel="stylesheet" href="css/aos-fade.css"> -->
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">X RPL 1<span>.</span></div>
+            <div class="loader-bar">
+                <div class="loader-progress" id="loader-progress"></div>
+            </div>
+            <p class="loader-text" id="loader-text">Disarankan untuk membuka web ini dengan Mode Desktop.   Memuat.....</p>
+        </div>
+    </div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <div class="profile-mini">
+                <div class="profile-img-wrap">
+                    <img src="asset/logo/LOGO.jpeg" alt="Gilang" loading="lazy">
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="profile-info">
+                    <h3>X RPL 1  </h3>
+                    <p>Generasi Masa Depan</p>
+                </div>
+            </div>
+
+            <div class="clock" id="clock">00:00:00</div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item active" data-section="beranda">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="pages/siswa.html" class="nav-item" data-section="tentang">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Siswa</span>
+                </a>
+                <a href="pages/guru.html" class="nav-item" data-section="keterampilan">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Guru</span>
+                </a>
+                <a href="pages/galeri.html" class="nav-item" data-section="proyek">
+                    <i class="fas fa-image"></i>
+                    <span>Galeri</span>
+                </a>
+                <a href="pages/video.html" class="nav-item" data-section="sertifikat">
+                    <i class="fas fa-video-camera"></i>
+                    <span>Vidio</span>
+                </a>
+                <a href="pages/alamat.html" class="nav-item" data-section="">
+                    <i class="fas fa-map"></i>
+                    <span>Alamat</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="sound-toggle" id="sound-toggle" title="Toggle Sound">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header" id="mobile-header">
+        <div class="mobile-logo">X RPl 1<span>.</span></div>
+        <div class="mobile-actions">
+            <button class="theme-toggle-mobile" id="theme-toggle-mobile">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <img src="asset/logo/rpl.webp" alt="Gilang">
+            <div>
+                <h4>X RPL 1</h4>
+                <p>Generasi Masa Depan</p>
+            </div>
+            <button class="mobile-nav-close" id="mobile-nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-item" data-section="beranda">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="pages/siswa.html" class="mobile-nav-item" data-section="tentang">
+                <i class="fas fa-user"></i> Siswa
+            </a>
+            <a href="pages/guru.html" class="mobile-nav-item" data-section="keterampilan">
+                <i class="fas fa-chalkboard-teacher"></i> Guru
+            </a>
+            <a href="pages/galeri.html" class="mobile-nav-item" data-section="proyek">
+                <i class="fas fa-image"></i> Galeri
+            </a>
+            <a href="pages/video.html" class="mobile-nav-item" data-section="sertifikat">
+                <i class="fas fa-video-camera"></i> Videos
+            </a>
+            <a href="pages/alamat.html" class="mobile-nav-item" data-section="">
+                <i class="fas fa-map"></i> Alamat
+            </a>
+        </div>
+        <div class="mobile-nav-social">
+            <a href="https://youtube.com/@rplsterida42?si=cGFB7m168Uk1rV2s" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/codingbudrek/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+
+
+<main class="page">
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Tahun Ajaran 2025/2027</span>
+            </div>
+            <!-- Container untuk teks berjalan -->
+        <div class="ticker-wrapper">
+            <div class="ticker-text">
+             AI adalah pena tercanggih yang pernah ada, namun kitalah penulis ceritanya. Keahlian RPL Anda dalam menganalisis masalah, memecahkan bug, dan merancang alur program adalah fondasi yang tidak akan pernah lapuk oleh zaman. Tetap semangat menguasai teknologi baru!
+             </div>
+        </div>
+            <h1>Kelas <span>X RPL</span></h1>
+            <p class="hero-subtitle">Rekayasa Perangkat Lunak - SMK PGRI 2 PONOROGO<br>Membangun Generasi Teknologi Masa Depan</p>
+            
+                <div class="hero-stats">
+                    <div class="stat-card" href="pages/siswa.html">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3>33</h3>
+                        <p>Siswa RPL Aktif</p>
+                    </div>
+                    <div class="stat-card" href="pages/guru.html">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>18</h3>
+                        <p>Guru Pembimbing</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Jadwal Pelajaran Section -->
+    <section class="jadwal-section" id="beranda">
+        <div class="section-header fade-in">
+            <h2>Jadwal Pelajaran</h2>
+            <p>Jadwal dinamis dengan highlight otomatis untuk hari yang sedang berjalan</p>
+        </div>
+
+        <div class="table-container">
+            <div class="table-title">
+                <i class="fas fa-calendar-alt"></i>
+                <span id="hariBerjalanLabel">Hari ini: --</span>
+
+                <span class="parity-control" style="margin-left: 12px; display: inline-flex; align-items: center; gap: 8px;">
+                    <label for="paritySelect" style="font-weight: 600;">Minggu:</label>
+                    <select id="paritySelect" style="padding: 6px 10px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.15);">
+                        <option value="ganjil">Ganjil</option>
+                        <option value="genap">Genap</option>
+                    </select>
+                </span>
+
+                <span id="parityLabel" style="margin-left: 10px; font-weight: 600;"></span>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="schedule-table" aria-label="Jadwal Pelajaran">
+                    <thead>
+                        <tr>
+                            <th>Jam</th>
+                            <th>Senin</th>
+                            <th>Selasa</th>
+                            <th>Rabu</th>
+                            <th>Kamis</th>
+                            <th>Jumat</th>
+                            <th>Sabtu</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jadwalTbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Piket Section -->
+    <section class="piket-section" id="beranda">
+        <div class="section-header fade-in">
+            <h2>Piket Interaktif</h2>
+            <p>Piket berdasarkan hari dengan highlight otomatis</p>
+        </div>
+
+        <div class="table-container">
+            <div class="table-title">
+                <i class="fas fa-broom"></i>
+                <span>Hari: <span id="piketHariLabel">--</span></span>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="schedule-table" aria-label="Jadwal Piket">
+                    <thead>
+                        <tr>
+                            <th>Hari</th>
+                            <th>Petugas</th>
+                            <th>Catatan</th>
+                        </tr>
+                    </thead>
+                    <tbody id="piketTbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section class="kontak-section" id="beranda">
+        <div class="section-header fade-in">
+            <h2>Hubungi Kami</h2>
+            <p>Ada pertanyaan atau ingin bergabung? Hubungi kami!</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info fade-in">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Alamat</h4>
+                        <p>SMK PGRI 2 PONOROGO<br>Jln. Soekarno-hatta</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Telepon</h4>
+                        <p>0352-461-821</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p> smkpgri2_ponorogo@yahoo.co.id</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <div>
+                        <h4>Website</h4>
+                        <p><a href="https://smkpgri2ponorogo.sch.id/" target="_blank" rel="noopener noreferrer">https://smkpgri2ponorogo.sch.id/</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="beranda">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>X RPL SMK PGRI 2 PONOROGO</h3>
+                <p>Kelas unggulan Rekayasa Perangkat Lunak yang siap mencetak generasi developer masa depan Indonesia.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/codingbudrek//"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="#"><i class="fab fa-whatsapp"></i></a> -->
+                    <a href="www.youtube.com/@RPLsterida42"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/cadanganacoout-lab"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#beranda">Beranda</a>
+                <a href="pages/siswa.html">Siswa</a>
+                <a href="pages/guru.html">Guru</a>
+                <a href="pages/galeri.html">Galeri</a>
+                <a href="pages/vidio.html">Video</a>
+                <a href="pages/alamat.html">Alamat</a>
+            </div>
+            <div class="footer-section">
+                <h3>Pelajaran</h3>
+                <a href="pages/information/rpl.html">Rekayasa Perangkat Lunak</a>
+                <a href="pages/information/pemrograman-web.html">Pemograman Web</a>
+                <a href="pages/information/basis-data.html">Basis Data</a>
+                <a href="pages/information/jaringan-komputer.html">Jaringan Komputer</a>
+                <a href="pages/information/pemrograman-berorientasi-objek.html">Pemrograman Berorientasi Objek</a>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><i class="fas fa-phone"></i> 0352-461-821 </p>
+                <p><i class="fas fa-envelope"></i> smkpgri2_ponorogo@yahoo.co.id</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Soekarno - Hatta, Kertosari, Kec. Babadan, Kabupaten Ponorogo, Jawa Timur</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kelas X RPL SMK PGRI 2 PONOROGO. Dibuat oleh <bold>GILANG NUR MAULIDA FAID</bold>.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" title="Kembali ke atas">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- YouTube IFrame Player API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/jadwal-piket.js"></script>
+    <script src="js/sidebar-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+- [ ] Update `js/jadwal-piket.js` to support schedule yang terpisah ganjil & genap (toggle/dropdown parity, default otomatis)
+- [ ] Update `index.html` to add dropdown `#paritySelect` (Ganjil/Genap) di section Jadwal Pelajaran
+- [ ] Verify in browser that jadwal berubah sesuai pilihan dan highlight hari berjalan tetap bekerja

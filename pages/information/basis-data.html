@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas X RPL - SMK PGRI 2 PONOROGO | Rekayasa Perangkat Lunak</title>
+    <meta name="description" content="Website Resmi Kelas X RPL SMK PGRI 2 PONOROGO - Membangun Generasi Teknologi Masa Depan">
+    <meta name="keywords" content="X RPL, SMK PGRI 2 PONOROGO, Rekayasa Perangkat Lunak, Pemrograman, Teknologi, sterida, ponorogo, smk, pgri, kasus">
+    <meta name="author" content="Kelas X RPL SMK PGRI 2 PONOROGO">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kelas X RPL - SMK PGRI 2 PONOROGO | Rekayasa Perangkat Lunak">
+    <meta property="og:description" content="Website Resmi Kelas X RPL SMK PGRI 2 PONOROGO">
+    <meta property="og:image" content="../asset/og_logo/xrpl.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://webxrplstd.vercel.app/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../asset/logo/favicon.ico">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/jadwal.css">
+    <!-- <link rel="stylesheet" href="css/aos-fade.css"> -->
+</head>
+<body>
+    <!-- Sidebar (replaces navbar) -->
+        <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <div class="profile-mini">
+                <div class="profile-img-wrap">
+                    <img src="../../asset/logo/LOGO.jpeg" alt="Gilang" loading="lazy">
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="profile-info">
+                    <h3>X RPL 1  </h3>
+                    <p>Generasi Masa Depan</p>
+                </div>
+            </div>
+
+            <div class="clock" id="clock">00:00:00</div>
+
+            <nav class="sidebar-nav">
+                <a href="../../index.html" class="nav-item active" data-section="beranda">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="../siswa.html" class="nav-item" data-section="tentang">
+                    <i class="fas fa-user"></i>
+                    <span>Siswa</span>
+                </a>
+                <a href="../guru.html" class="nav-item" data-section="keterampilan">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Guru</span>
+                </a>
+                <a href="../galeri.html" class="nav-item" data-section="proyek">
+                    <i class="fas fa-image"></i>
+                    <span>Galeri</span>
+                </a>
+                <a href="../video.html" class="nav-item" data-section="sertifikat">
+                    <i class="fas fa-video-camera"></i>
+                    <span>Vidio</span>
+                </a>
+                <a href="../alamat.html" class="nav-item" data-section="kontak">
+                    <i class="fas fa-map"></i>
+                    <span>Alamat</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="sound-toggle" id="sound-toggle" title="Toggle Sound">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header" id="mobile-header">
+        <div class="mobile-logo">X RPl 1<span>.</span></div>
+        <div class="mobile-actions">
+            <button class="theme-toggle-mobile" id="theme-toggle-mobile">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <img src="../../asset/logo/rpl.webp" alt="Gilang">
+            <div>
+                <h4>X RPL 1</h4>
+                <p>Generasi Masa Depan</p>
+            </div>
+            <button class="mobile-nav-close" id="mobile-nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="../../index.html" class="mobile-nav-item" data-section="beranda">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="../siswa.html" class="mobile-nav-item" data-section="tentang">
+                <i class="fas fa-user"></i> Siswa
+            </a>
+            <a href="../guru.html" class="mobile-nav-item" data-section="keterampilan">
+                <i class="fas fa-chalkboard-teacher"></i> Guru
+            </a>
+            <a href="../galeri.html" class="mobile-nav-item" data-section="proyek">
+                <i class="fas fa-image"></i> Galeri
+            </a>
+            <a href="../video.html" class="mobile-nav-item" data-section="sertifikat">
+                <i class="fas fa-video-camera"></i> Videos
+            </a>
+            <a href="../alamat.html" class="mobile-nav-item" data-section="kontak">
+                <i class="fas fa-map"></i> Alamat
+            </a>
+        </div>
+        <div class="mobile-nav-social">
+            <a href="https://youtube.com/@rplsterida42?si=cGFB7m168Uk1rV2s" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/codingbudrek/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+
+
+    <main class="content">
+        <section class="section">
+            <div class="section-header fade-in">
+                <h1>Basis Data</h1>
+                <p>Konsep penyimpanan data terstruktur agar aplikasi mudah mencari, mengubah, dan melaporkan informasi.</p>
+            </div>
+
+            <div class="material-grid">
+                <article class="material-card" data-aos="fade-up">
+                    <h2>Pengertian</h2>
+                    <p>
+                        Basis data (database) adalah kumpulan data yang disusun dengan aturan tertentu agar dapat diakses secara efisien.
+                        Database biasanya dikelola dengan <b>DBMS</b> (Database Management System) seperti MySQL, PostgreSQL, atau SQL Server.
+                    </p>
+                    <ul>
+                        <li>Data tersimpan rapi (tidak tercecer di file terpisah).</li>
+                        <li>Mendukung pencarian dan laporan.</li>
+                        <li>Mencegah duplikasi dan menjaga konsistensi data.</li>
+                    </ul>
+                </article>
+
+                <article class="material-card" data-aos="fade-up">
+                    <h2>Konsep Utama</h2>
+                    <ul>
+                        <li><b>Tabel</b>: kumpulan data dalam baris dan kolom.</li>
+                        <li><b>Field/Kolom</b>: atribut (contoh: nama, nis).</li>
+                        <li><b>Record/Baris</b>: satu data lengkap (satu siswa).</li>
+                        <li><b>Primary Key</b>: kunci unik untuk membedakan data.</li>
+                        <li><b>Relasi</b>: hubungan antar tabel (misal siswa ↔ absensi).</li>
+                    </ul>
+                </article>
+
+                <article class="material-card" data-aos="fade-up">
+                    <h2>Contoh Skema Database Sekolah</h2>
+                    <p>Contoh tabel:</p>
+                    <ul>
+                        <li><b>siswa</b> (id_siswa, nama, nis)</li>
+                        <li><b>absensi</b> (id_absensi, id_siswa, tanggal, status)</li>
+                    </ul>
+
+                    <pre><code>// Contoh SQL (konsep, bukan harus sama persis)
+CREATE TABLE siswa (
+  id_siswa INT PRIMARY KEY,
+  nama VARCHAR(100),
+  nis VARCHAR(20)
+);
+
+CREATE TABLE absensi (
+  id_absensi INT PRIMARY KEY,
+  id_siswa INT,
+  tanggal DATE,
+  status VARCHAR(10),
+  FOREIGN KEY (id_siswa) REFERENCES siswa(id_siswa)
+);</code></pre>
+                </article>
+
+                <article class="material-card" data-aos="fade-up">
+                    <h2>Contoh Query (Mencari Data)</h2>
+                    <pre><code>// Cari absensi siswa tertentu berdasarkan NIS
+SELECT a.tanggal, a.status
+FROM absensi a
+JOIN siswa s ON a.id_siswa = s.id_siswa
+WHERE s.nis = '12345';</code></pre>
+                    <p>Hasilnya: daftar tanggal dan status kehadiran siswa tersebut.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>X RPL SMK PGRI 2 PONOROGO</h3>
+                <p>Kelas unggulan Rekayasa Perangkat Lunak yang siap mencetak generasi developer masa depan Indonesia.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/codingbudrek//"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="#"><i class="fab fa-whatsapp"></i></a> -->
+                    <a href="www.youtube.com/@RPLsterida42"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/cadanganacoout-lab"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="../../index.html">Beranda</a>
+                <a href="../siswa.html">Siswa</a>
+                <a href="../guru.html">Guru</a>
+                <a href="../galeri.html">Galeri</a>
+                <a href="../vidio.html">Video</a>
+                <a href="../alamat.html">Alamat</a>
+            </div>
+            <div class="footer-section">
+                <h3>Pelajaran</h3>
+                <a href="rpl.html">Rekayasa Perangkat Lunak</a>
+                <a href="pemrograman-web.html">Pemograman Web</a>
+                <a href="basis-data.html">Basis Data</a>
+                <a href="jaringan-komputer.html">Jaringan Komputer</a>
+                <a href="pemrograman-berorientasi-objek.html">Pemrograman Berorientasi Objek</a>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><i class="fas fa-phone"></i> 0352-461-821 </p>
+                <p><i class="fas fa-envelope"></i> smkpgri2_ponorogo@yahoo.co.id</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Soekarno - Hatta, Kertosari, Kec. Babadan, Kabupaten Ponorogo, Jawa Timur</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kelas X RPL SMK PGRI 2 PONOROGO. Dibuat oleh <bold>GILANG NUR MAULIDA FAID</bold>.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" title="Kembali ke atas">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- YouTube IFrame Player API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- JavaScript -->
+    <script src="../../js/script.js"></script>
+    <script src="../../js/jadwal-piket.js"></script>
+</body>
+</html>

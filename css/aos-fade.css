@@ -1,0 +1,8 @@
+.fade-in{
+  /* default state (fallback jika AOS belum ter-load) */
+  opacity: 0;
+}
+
+
+
+

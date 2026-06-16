@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas X RPL - SMK PGRI 2 PONOROGO | Rekayasa Perangkat Lunak</title>
+    <meta name="description" content="Website Resmi Kelas X RPL SMK PGRI 2 PONOROGO - Membangun Generasi Teknologi Masa Depan">
+    <meta name="keywords" content="X RPL, SMK PGRI 2 PONOROGO, Rekayasa Perangkat Lunak, Pemrograman, Teknologi, sterida, ponorogo, smk, pgri, kasus">
+    <meta name="author" content="Kelas X RPL SMK PGRI 2 PONOROGO">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kelas X RPL - SMK PGRI 2 PONOROGO | Rekayasa Perangkat Lunak">
+    <meta property="og:description" content="Website Resmi Kelas X RPL SMK PGRI 2 PONOROGO">
+    <meta property="og:image" content="../asset/og_logo/xrpl.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://webxrplstd.vercel.app/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../asset/logo/favicon.ico">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+<script src="../js/script.js" defer></script>
+    <script src="../js/sidebar-nav.js" defer></script>
+    <!-- <link rel="stylesheet" href="css/aos-fade.css"> -->
+</head>
+<body>
+     <!-- Sidebar (replaces navbar) -->
+        <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <div class="profile-mini">
+                <div class="profile-img-wrap">
+                    <img src="../asset/logo/LOGO.jpeg" alt="Gilang" loading="lazy">
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="profile-info">
+                    <h3>X RPL 1  </h3>
+                    <p>Generasi Masa Depan</p>
+                </div>
+            </div>
+
+            <div class="clock" id="clock">00:00:00</div>
+
+            <nav class="sidebar-nav">
+                <a href="../index.html" class="nav-item active" data-section="beranda">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="siswa.html" class="nav-item" data-section="tentang">
+                    <i class="fas fa-user"></i>
+                    <span>Siswa</span>
+                </a>
+                <a href="guru.html" class="nav-item" data-section="keterampilan">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Guru</span>
+                </a>
+                <a href="galeri.html" class="nav-item" data-section="proyek">
+                    <i class="fas fa-image"></i>
+                    <span>Galeri</span>
+                </a>
+                <a href="video.html" class="nav-item" data-section="sertifikat">
+                    <i class="fas fa-video-camera"></i>
+                    <span>Vidio</span>
+                </a>
+                <a href="alamat.html" class="nav-item" data-section="kontak">
+                    <i class="fas fa-map"></i>
+                    <span>Alamat</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="sound-toggle" id="sound-toggle" title="Toggle Sound">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header" id="mobile-header">
+        <div class="mobile-logo">X RPl 1<span>.</span></div>
+        <div class="mobile-actions">
+            <button class="theme-toggle-mobile" id="theme-toggle-mobile">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <img src="../asset/logo/rpl.webp" alt="Gilang">
+            <div>
+                <h4>X RPL 1</h4>
+                <p>Generasi Masa Depan</p>
+            </div>
+            <button class="mobile-nav-close" id="mobile-nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="../index.html" class="mobile-nav-item" data-section="beranda">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="siswa.html" class="mobile-nav-item" data-section="tentang">
+                <i class="fas fa-user"></i> Siswa
+            </a>
+            <a href="guru.html" class="mobile-nav-item" data-section="keterampilan">
+                <i class="fas fa-chalkboard-teacher"></i> Guru
+            </a>
+            <a href="galeri.html" class="mobile-nav-item" data-section="proyek">
+                <i class="fas fa-image"></i> Galeri
+            </a>
+            <a href="video.html" class="mobile-nav-item" data-section="sertifikat">
+                <i class="fas fa-video-camera"></i> Videos
+            </a>
+            <a href="alamat.html" class="mobile-nav-item" data-section="kontak">
+                <i class="fas fa-map"></i> Alamat
+            </a>
+        </div>
+        <div class="mobile-nav-social">
+            <a href="https://youtube.com/@rplsterida42?si=cGFB7m168Uk1rV2s" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/codingbudrek/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+
+    <main class="page">
+
+    <!-- Siswa Section -->
+    <section class="siswa-section" id="tentang">
+        <div class="section-header fade-in">
+            <h2>Daftar Siswa</h2>
+            <p>34 Siswa Kelas X RPL yang bersemangat dalam mempelajari dunia pemrograman dan teknologi informasi</p>
+        </div>
+        <div class="students-grid">
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Affandi Fathufrahman </p>
+                        <p><strong>Hobi:</strong> Game & Basketball </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Ahmad barak neilfadli hardiansyah </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Alecia poppy shakira ayu kirana </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Alexa aditya cindra dewi </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/manda.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Amanda cinthya kasih </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Ardila wahyuning putri </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/aretha.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Aretha maulina noviatin </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Atha tandagra suryansyah </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/bagas.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Bagas ardiansyah </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Candy al azka </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Celsia ramadhani </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/dimas.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Dimas riang ilham saputra </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/diva.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Diva ayu permata </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/ena.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Ena zivana idelia gita </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Ficko adiputra perdana </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/gita.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Gayuh gita yulia natasya </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/gilang.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Gilang nur maulida faid </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/helcia.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Helcia andika putri </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/hendri.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Hedri setiawan </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/rofig.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Ilham rofig ananda barocta </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/julian.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Julian tri pratama </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/kenza.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Kenza pratama </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Khaula nendra sukma athafarel </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Meta evilya giovany </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/akbar.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Muhamad akbar fikriansyah </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/nabila.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Nabila` atha nur al fiyah </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/narji.jpg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Nurul safika </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/ragilb.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Ragil bagus nugroho </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Ragil satria risdiyanto </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Relyta triya ayu lestari </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/siswa/rifki.jpeg" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Rifky aditya saputra </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Satria pradika bayu pratama </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <img src="../asset/fotoawal/sementara.png" alt="Siswa ${i}">
+                    <h3></h3>
+                    <div class="student-info">
+                        <p><strong>Nama:</strong> Sultan pasha ibrahim sukarno </p>
+                        <p><strong>Hobi:</strong> - </p>
+                        <p><strong>Keahlian:</strong> - </p>
+                    </div>
+                </div>
+        </div>
+    </section>
+    
+    </main>
+</body>
+<!-- Footer -->
+    <footer class="footer" id="tentang">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>X RPL SMK PGRI 2 PONOROGO</h3>
+                <p>Kelas unggulan Rekayasa Perangkat Lunak yang siap mencetak generasi developer masa depan Indonesia.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/codingbudrek//"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="#"><i class="fab fa-whatsapp"></i></a> -->
+                    <a href="www.youtube.com/@RPLsterida42"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/cadanganacoout-lab"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="../index.html">Beranda</a>
+                <a href="siswa.html">Siswa</a>
+                <a href="guru.html">Guru</a>
+                <a href="galeri.html">Galeri</a>
+                <a href="vidio.html">Video</a>
+                <a href="profil.html">Profil</a>
+            </div>
+            <div class="footer-section">
+                <h3>Pelajaran</h3>
+                <a href="information/rpl.html">Rekayasa Perangkat Lunak</a>
+                <a href="information/pemrograman-web.html">Pemograman Web</a>
+                <a href="information/basis-data.html">Basis Data</a>
+                <a href="information/jaringan-komputer.html">Jaringan Komputer</a>
+                <a href="information/pemrograman-berorientasi-objek.html">Pemrograman Berorientasi Objek</a>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><i class="fas fa-phone"></i> 0352-461-821 </p>
+                <p><i class="fas fa-envelope"></i> smkpgri2_ponorogo@yahoo.co.id</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Soekarno - Hatta, Kertosari, Kec. Babadan, Kabupaten Ponorogo, Jawa Timur</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kelas X RPL SMK PGRI 2 PONOROGO. Dibuat oleh <bold>GILANG NUR MAULIDA FAID</bold>.</p>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" title="Kembali ke atas">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- YouTube IFrame Player API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+    <script src="../js/sidebar-nav.js"></script>
+</body>
+</html>
