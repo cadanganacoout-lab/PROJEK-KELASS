@@ -26,8 +26,8 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/information.css">
     <link rel="stylesheet" href="../../css/jadwal.css">
-    <!-- <link rel="stylesheet" href="css/aos-fade.css"> -->
 </head>
 <body>
     <!-- Sidebar (replaces navbar) -->
@@ -141,11 +141,8 @@
         <section class="section">
             <div class="section-header fade-in">
                 <h1>Basis Data</h1>
-                <p>Konsep penyimpanan data terstruktur agar aplikasi mudah mencari, mengubah, dan melaporkan informasi.</p>
-            </div>
-
-            <div class="material-grid">
-                <article class="material-card" data-aos="fade-up">
+                <p>Konsep penyimpanan data terstruktur agar aplikasi mudah mencari, mengubah, dan melaporkan informasi.</p><br> 
+        
                     <h2>Pengertian</h2>
                     <p>
                         Basis data (database) adalah kumpulan data yang disusun dengan aturan tertentu agar dapat diakses secara efisien.
@@ -156,9 +153,8 @@
                         <li>Mendukung pencarian dan laporan.</li>
                         <li>Mencegah duplikasi dan menjaga konsistensi data.</li>
                     </ul>
-                </article>
+                </article><br>
 
-                <article class="material-card" data-aos="fade-up">
                     <h2>Konsep Utama</h2>
                     <ul>
                         <li><b>Tabel</b>: kumpulan data dalam baris dan kolom.</li>
@@ -169,7 +165,7 @@
                     </ul>
                 </article>
 
-                <article class="material-card" data-aos="fade-up">
+                <br>
                     <h2>Contoh Skema Database Sekolah</h2>
                     <p>Contoh tabel:</p>
                     <ul>
@@ -178,29 +174,29 @@
                     </ul>
 
                     <pre><code>// Contoh SQL (konsep, bukan harus sama persis)
-CREATE TABLE siswa (
-  id_siswa INT PRIMARY KEY,
-  nama VARCHAR(100),
-  nis VARCHAR(20)
-);
+    CREATE TABLE siswa (
+    id_siswa INT PRIMARY KEY,
+    nama VARCHAR(100),
+    nis VARCHAR(20)
+    );
 
-CREATE TABLE absensi (
-  id_absensi INT PRIMARY KEY,
-  id_siswa INT,
-  tanggal DATE,
-  status VARCHAR(10),
-  FOREIGN KEY (id_siswa) REFERENCES siswa(id_siswa)
-);</code></pre>
+    CREATE TABLE absensi (
+    id_absensi INT PRIMARY KEY,
+    id_siswa INT,
+    tanggal DATE,
+    status VARCHAR(10),
+    FOREIGN KEY (id_siswa) REFERENCES siswa(id_siswa)
+    );</code></pre>
                 </article>
 
-                <article class="material-card" data-aos="fade-up">
+                <br>
                     <h2>Contoh Query (Mencari Data)</h2>
                     <pre><code>// Cari absensi siswa tertentu berdasarkan NIS
-SELECT a.tanggal, a.status
-FROM absensi a
-JOIN siswa s ON a.id_siswa = s.id_siswa
-WHERE s.nis = '12345';</code></pre>
-                    <p>Hasilnya: daftar tanggal dan status kehadiran siswa tersebut.</p>
+    SELECT a.tanggal, a.status
+    FROM absensi a
+    JOIN siswa s ON a.id_siswa = s.id_siswa
+    WHERE s.nis = '12345';</code></pre>
+     <p>Hasilnya: daftar tanggal dan status kehadiran siswa tersebut.</p>
                 </article>
             </div>
         </section>
