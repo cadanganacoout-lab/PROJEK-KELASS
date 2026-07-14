@@ -3,11 +3,11 @@
 window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
     if (loader) {
-        loader.style.transition = 'opacity 30s ease';
-        loader.style.opacity = '10';
+        loader.style.transition = 'opacity 100s ease';
+        loader.style.opacity = '100';
         setTimeout(() => {
             loader.style.display = 'none';
-        }, 6000);
+        }, 4000);
     }
 });
 

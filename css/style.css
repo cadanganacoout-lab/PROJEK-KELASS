@@ -37,7 +37,7 @@
 }
 
 .loader-bar {
-    width: 200px;
+    width: 500px;
     height: 3px;
     background: var(--bg-tertiary);
     border-radius: var(--radius-full);
@@ -47,9 +47,9 @@
 
 .loader-progress {
     height: 100%;
-    background: linear-gradient(90deg, var(--accent-blue), var(--accent-red), var(--accent-purple));
+    background: linear-gradient(100deg, var(--accent-blue), var(--accent-red), var(--accent-purple));
     width: 0%;
-    animation: loadProgress 6s ease forwards;
+    animation: loadProgress 5s ease forwards;
 }
 
 @keyframes loadProgress {
@@ -577,6 +577,12 @@ body {
   box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.08), 0 20px 60px rgba(0,0,0,0.25);
 }
 
+@media (max-width: 768px) {
+  .ticker-wrapper {
+    max-width: 50%;
+    padding: 8px 14px;
+  }
+}
 
 .ticker-text {
   display: inline-block;
@@ -773,7 +779,6 @@ section {
   margin: 0 auto;
 }
 
-
 /* Page wrapper (for pages without hero) */
 .page {
   padding-top: 72px; /* navbar height approximation */
@@ -793,14 +798,11 @@ main .video-section {
   max-width: var(--container);
 }
 
-
 /* consistent spacing helper */
 .section-gap {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
-
-
 
 .section-header {
   text-align: center;
@@ -957,100 +959,6 @@ main .video-section {
   letter-spacing: 0.01em;
 }
 
-/* Prestasi Timeline */
-.prestasi-section {
-  position: relative;
-  background-image:
-    linear-gradient(rgba(5, 5, 10, 0.88), rgba(5, 5, 10, 0.92)),
-    url("../asset/background/biruungu.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  border-radius: 24px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 100px 5%;
-  max-width: 1200px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.achievement-timeline {
-  position: relative;
-  padding-left: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.achievement-timeline::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, #3b82f6, #8b5cf6, #ef4444, #fbbf24);
-  border-radius: 3px;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 2.5rem;
-  padding-left: 1.5rem;
-}
-
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -2rem;
-  top: 0.25rem;
-  width: 14px;
-  height: 14px;
-  background: #0f0f1a;
-  border: 3px solid #fbbf24;
-  border-radius: 50%;
-  transform: translateX(-7px);
-  box-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
-}
-
-.timeline-date {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #fbbf24;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
-}
-
-.timeline-content {
-  background: rgba(20, 20, 35, 0.8);
-  padding: 1.5rem;
-  border-radius: 14px;
-  border-left: 3px solid #8b5cf6;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  transition: all 0.35s ease;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-.timeline-content:hover {
-  transform: translateX(4px);
-  box-shadow: 0 0 25px rgba(139, 92, 246, 0.15);
-  border-left-color: #fbbf24;
-}
-
-.timeline-content h4 {
-  color: #f8fafc;
-  font-weight: 600;
-  margin-bottom: 0.35rem;
-  font-size: 1.1rem;
-}
-
-.timeline-content p {
-  color: #94a3b8;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
 /* Kontak Section */
 .kontak-section {
   background: rgba(10, 10, 18, 0.6);
@@ -1118,10 +1026,10 @@ main .video-section {
 
 /* Footer */
 .footer {
-  background: #030305;
+  background: #000000;
   color: #f0f0f0;
   padding: 4rem 5% 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-top: 4px solid rgba(255, 255, 255, 0.04);
 }
 
 .footer-content {
