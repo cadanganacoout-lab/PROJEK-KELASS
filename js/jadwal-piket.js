@@ -1,5 +1,5 @@
 /* Jadwal & Piket interaktif (dinamis + highlight hari berjalan)
-   Mendukung pemilihan Minggu Ganjil/Genap. Data diambil dari teks jadwal yang dikirim user.
+   Mendukung pemilihan Minggu Ganjil/Genap. Data jadwal: XI RPL 2026-2027.
 */
 (function () {
   'use strict';
@@ -14,129 +14,128 @@
     6: 'Sabtu'
   };
 
-  // Slot mengikuti `scheduleData.jams` (7 baris per hari)
-  // 0: UP, 1: Jam 1-2, 2: IS 1, 3: Jam 3-4, 4: Jam 5-6, 5: IS 2, 6: Jam 7-8
+  // Kepanjangan kode mata pelajaran, dipakai sebagai tooltip (title) pada tabel.
+  const legend = {
+    BIN: 'Bahasa Indonesia',
+    BIG: 'Bahasa Inggris',
+    MTK: 'Matematika',
+    SEJ: 'Sejarah',
+    BJ: 'Bahasa Jawa',
+    PJOK: 'Pendidikan Jasmani Olahraga Kesehatan',
+    KKRD: 'Konsentrasi Keahlian RPL',
+    MPPRDPG: 'Mata Pelajaran Pilihan RPL',
+    BK: 'Bimbingan Konseling',
+    KIdK: 'Kreativitas Inovasi dan Kewirausahaan',
+    PABP: 'Pendidikan Agama Budi Pekerti',
+    PP: 'Pendidikan Pancasila'
+  };
+
+  // Catatan penting: jam pelajaran TIDAK sama persis di tiap hari (Senin ada UPACARA,
+  // Jumat & Sabtu pulang lebih awal dengan hanya 1x istirahat, dst). Karena itu setiap
+  // sel jadwal menyimpan waktunya sendiri-sendiri (properti `waktu`), dan kolom paling
+  // kiri tabel hanya berfungsi sebagai nomor sesi, bukan patokan jam yang sama untuk
+  // semua hari.
   const scheduleData = {
-    jams: [
-      '06.45 - 07.30',
-      '07.30 - 08.30',
-      '08.30 - 09.15',
-      '09.15 - 10.35',
-      '10.35 - 11.55',
-      '11.55 - 12.40',
-      '12.40 - 14.00'
-    ],
+    sesi: ['Sesi 1', 'Sesi 2', 'Sesi 3', 'Sesi 4', 'Sesi 5', 'Sesi 6', 'Sesi 7'],
+    ruang: {
+      ganjil: 'R-08',
+      genap: 'R-LUBAN'
+    },
     jadwalByParity: {
       ganjil: {
         Senin: [
-          { mata: 'UPACARA', guru: '-' },
-          { mata: 'Bahasa Inggris', guru: 'B. Siti Nurhayati' },
-          { mata: 'Istirahat 1', guru: '-' },
-          { mata: 'Bahasa Jawa', guru: 'B. Anies Kurniawati' },
-          { mata: 'Matematika', guru: 'B. Ema Dwi Novita' },
-          { mata: 'Istirahat 2', guru: '-' },
-          { mata: 'PABP', guru: 'P. Zainul Arifin' }
+          { waktu: '06.45 - 07.30', mata: 'UPACARA', guru: '-' },
+          { waktu: '07.30 - 08.50', mata: 'MTK', guru: 'Erna Dwi Novita, S.Pd' },
+          { waktu: '08.50 - 10.10', mata: 'SEJ', guru: 'Edlin Vivi Muratrie, S.Pd' },
+          { waktu: '10.10 - 10.35', mata: 'Istirahat 1', guru: '-' },
+          { waktu: '10.35 - 11.55', mata: 'KIdK', guru: 'Linda Savitri, S.Pd' },
+          { waktu: '11.55 - 12.40', mata: 'Istirahat 2', guru: '-' },
+          { waktu: '12.40 - 14.00', mata: 'BIG', guru: 'Afrida Vidiyastuti, S.Pd' }
         ],
         Selasa: [
-          { mata: 'PABP', guru: 'P. Zainul Arifin' },
-          { mata: 'Pend Pancasila / PP', guru: 'B. Mita Argawati' },
-          { mata: 'Istirahat 1', guru: '-' },
-          { mata: 'PJOK', guru: 'P. Samsu Nur Z' },
-          { mata: 'BIN', guru: 'B. Puji Sriwigati' },
-          { mata: 'Istirahat 2', guru: '-' },
-          { mata: 'BIN', guru: 'B. Puji Sriwigati' }
+          { waktu: '06.45 - 08.15', mata: 'PABP', guru: 'Zainul Arifin, S.Ag, M.PdI' },
+          { waktu: '08.15 - 09.45', mata: 'BIN', guru: 'Viska Kholifatul Ummah, S.Pd' },
+          { waktu: '09.45 - 10.15', mata: 'Istirahat 1', guru: '-' },
+          { waktu: '10.15 - 11.45', mata: 'MTK', guru: 'Erna Dwi Novita, S.Pd' },
+          { waktu: '11.45 - 12.30', mata: 'Istirahat 2', guru: '-' },
+          { waktu: '12.30 - 14.00', mata: 'BIG', guru: 'Afrida Vidiyastuti, S.Pd' }
         ],
         Rabu: [
-          { mata: 'BIN', guru: 'B. Puji Sriwigati' },
-          { mata: 'Bahasa Jawa', guru: 'B. Anies Kurniawati' },
-          { mata: 'Istirahat 1', guru: '-' },
-          { mata: 'Bahasa Inggris', guru: 'B. Siti Nurhayati' },
-          { mata: 'Matematika', guru: 'B. Ema Dwi Novita' },
-          { mata: 'Istirahat 2', guru: '-' },
-          { mata: 'Matematika', guru: 'B. Ema Dwi Novita' }
+          { waktu: '06.45 - 08.15', mata: 'BIN', guru: 'Viska Kholifatul Ummah, S.Pd' },
+          { waktu: '08.15 - 09.45', mata: 'PABP', guru: 'Zainul Arifin, S.Ag, M.PdI' },
+          { waktu: '09.45 - 10.15', mata: 'Istirahat 1', guru: '-' },
+          { waktu: '10.15 - 11.45', mata: 'BIG', guru: 'Afrida Vidiyastuti, S.Pd' },
+          { waktu: '11.45 - 12.30', mata: 'Istirahat 2', guru: '-' },
+          { waktu: '12.30 - 14.00', mata: 'BJ', guru: 'Anies Kurniawati, S.Pd' }
         ],
         Kamis: [
-          { mata: 'Bahasa Inggris', guru: 'B. Siti Nurhayati' },
-          { mata: 'BIN', guru: 'B. Puji Sriwigati' },
-          { mata: 'Istirahat 1', guru: '-' },
-          { mata: 'Sejarah', guru: 'Drs. Sudirman' },
-          { mata: 'Matematika', guru: 'B. Ema Dwi Novita' },
-          { mata: 'Istirahat 2', guru: '-' },
-          { mata: 'Matematika', guru: 'B. Ema Dwi Novita' }
+          { waktu: '06.45 - 08.15', mata: 'BIN', guru: 'Viska Kholifatul Ummah, S.Pd' },
+          { waktu: '08.15 - 09.45', mata: 'PJOK', guru: 'Samsu Nur Zamaniyanto, S.Pd' },
+          { waktu: '09.45 - 10.15', mata: 'Istirahat 1', guru: '-' },
+          { waktu: '10.15 - 11.45', mata: 'MTK', guru: 'Erna Dwi Novita, S.Pd' },
+          { waktu: '11.45 - 12.30', mata: 'Istirahat 2', guru: '-' },
+          { waktu: '12.30 - 14.00', mata: 'SEJ', guru: 'Edlin Vivi Muratrie, S.Pd' }
         ],
         Jumat: [
-          { mata: 'PJOK', guru: 'P. Samsu Nur Z' },
-          { mata: 'Bahasa Inggris', guru: 'B. Siti Nurhayati' },
-          { mata: 'Istirahat 1', guru: '-' },
-          { mata: 'BIN', guru: 'B. Puji Sriwigati' },
-          { mata: 'Matematika', guru: 'B. Ema Dwi Novita' },
-          { mata: 'Istirahat 2', guru: '-' },
-          { mata: 'Matematika', guru: 'B. Ema Dwi Novita' }
+          { waktu: '06.45 - 07.45', mata: 'PP', guru: 'Mita Argawati, S.Pd' },
+          { waktu: '07.45 - 08.45', mata: 'BJ', guru: 'Anies Kurniawati, S.Pd' },
+          { waktu: '08.45 - 09.00', mata: 'Istirahat', guru: '-' },
+          { waktu: '09.00 - 10.00', mata: 'KIdK', guru: 'Linda Savitri, S.Pd' },
+          { waktu: '10.00 - 11.00', mata: 'BK', guru: 'Mutia Dwi Zulfana, S.Pd.' }
         ],
         Sabtu: [
-          { mata: 'Pend Pancasila / PP', guru: 'B. Mita Argawati' },
-          { mata: 'Sejarah', guru: 'Drs. Sudirman' },
-          { mata: 'Istirahat 1', guru: '-' },
-          { mata: 'PJOK', guru: 'P. Samsu Nur Z' },
-          { mata: 'PJOK', guru: 'P. Samsu Nur Z' },
-          { mata: 'Istirahat 2', guru: '-' },
-          { mata: 'PJOK', guru: 'P. Samsu Nur Z' }
+          { waktu: '06.45 - 07.45', mata: 'PJOK', guru: 'Samsu Nur Zamaniyanto, S.Pd' },
+          { waktu: '07.45 - 08.45', mata: 'PP', guru: 'Mita Argawati, S.Pd' },
+          { waktu: '08.45 - 09.00', mata: 'Istirahat', guru: '-' },
+          { waktu: '09.00 - 10.00', mata: 'BIG', guru: 'Afrida Vidiyastuti, S.Pd' }
         ]
       },
       genap: {
         Senin: [
-          { mata: 'UPACARA', guru: '-' },
-          { mata: 'DDPK', guru: 'P. IRFAN' },
-          { mata: 'Istirahat 1', guru: '-' },
-          { mata: 'DDPK', guru: 'P. IRFAN' },
-          { mata: 'DDPK', guru: 'P. ERVAN' },
-          { mata: 'Istirahat 2', guru: '-' },
-          { mata: 'DDPK', guru: 'P. ERVAN' }
+          { waktu: '06.45 - 07.30', mata: 'UPACARA', guru: '-' },
+          { waktu: '07.30 - 08.50', mata: 'KKRD', guru: 'Andies Pramudiyantoro, S.Kom' },
+          { waktu: '08.50 - 10.10', mata: 'KKRD', guru: 'Andies Pramudiyantoro, S.Kom' },
+          { waktu: '10.10 - 10.35', mata: 'Istirahat 1', guru: '-' },
+          { waktu: '10.35 - 11.55', mata: 'KKRD', guru: 'Andies Pramudiyantoro, S.Kom' },
+          { waktu: '11.55 - 12.40', mata: 'Istirahat 2', guru: '-' },
+          { waktu: '12.40 - 14.00', mata: 'KKRD', guru: 'Andies Pramudiyantoro, S.Kom' }
         ],
         Selasa: [
-          { mata: 'Pendidikan IPAS / PIPAdS', guru: 'B. INDAH' },
-          { mata: 'PIPAdS', guru: 'B. INDAH' },
-          { mata: 'Istirahat 1', guru: '-' },
-          { mata: 'PIPAdS', guru: 'B. INDAH' },
-          { mata: 'Informatika', guru: 'P. FATCHIANO' },
-          { mata: 'Istirahat 2', guru: '-' },
-          { mata: 'Informatika', guru: 'P. FATCHIANO' }
+          { waktu: '06.45 - 08.15', mata: 'KKRD', guru: 'Endy Bagus Setyawan R. S.Kom' },
+          { waktu: '08.15 - 09.45', mata: 'KKRD', guru: 'Endy Bagus Setyawan R. S.Kom' },
+          { waktu: '09.45 - 10.15', mata: 'Istirahat 1', guru: '-' },
+          { waktu: '10.15 - 11.45', mata: 'KKRD', guru: 'Endy Bagus Setyawan R. S.Kom' },
+          { waktu: '11.45 - 12.30', mata: 'Istirahat 2', guru: '-' },
+          { waktu: '12.30 - 14.00', mata: 'KKRD', guru: 'Endy Bagus Setyawan R. S.Kom' }
         ],
         Rabu: [
-          { mata: 'DDPK', guru: 'P. HENDRIK' },
-          { mata: 'DDPK', guru: 'P. HENDRIK' },
-          { mata: 'Istirahat 1', guru: '-' },
-          { mata: 'DDPK', guru: 'P. ENDY' },
-          { mata: 'DDPK', guru: 'P. ENDY' },
-          { mata: 'Istirahat 2', guru: '-' },
-          { mata: 'DDPK', guru: 'P. ENDY' }
+          { waktu: '06.45 - 08.15', mata: 'KKRD', guru: 'Endy Bagus Setyawan R. S.Kom' },
+          { waktu: '08.15 - 09.45', mata: 'KKRD', guru: 'Endy Bagus Setyawan R. S.Kom' },
+          { waktu: '09.45 - 10.15', mata: 'Istirahat 1', guru: '-' },
+          { waktu: '10.15 - 11.45', mata: 'KKRD', guru: 'Muh. Faqihuddin Assholih, S.Kom' },
+          { waktu: '11.45 - 12.30', mata: 'Istirahat 2', guru: '-' },
+          { waktu: '12.30 - 14.00', mata: 'KKRD', guru: 'Muh. Faqihuddin Assholih, S.Kom' }
         ],
         Kamis: [
-          { mata: 'DDPK', guru: 'P. RIDWAN' },
-          { mata: 'DDPK', guru: 'P. RIDWAN' },
-          { mata: 'Istirahat 1', guru: '-' },
-          { mata: 'DDPK', guru: 'P. FAQIH' },
-          { mata: 'DDPK', guru: 'P. FAQIH' },
-          { mata: 'Istirahat 2', guru: '-' },
-          { mata: 'DDPK', guru: 'P. FAQIH' }
+          { waktu: '06.45 - 08.15', mata: 'KKRD', guru: 'Hendrik Dwi Yusyanto, S.Kom' },
+          { waktu: '08.15 - 09.45', mata: 'KKRD', guru: 'Hendrik Dwi Yusyanto, S.Kom' },
+          { waktu: '09.45 - 10.15', mata: 'Istirahat 1', guru: '-' },
+          { waktu: '10.15 - 11.45', mata: 'KKRD', guru: 'Hendrik Dwi Yusyanto, S.Kom' },
+          { waktu: '11.45 - 12.30', mata: 'Istirahat 2', guru: '-' },
+          { waktu: '12.30 - 14.00', mata: 'KKRD', guru: 'Hendrik Dwi Yusyanto, S.Kom' }
         ],
         Jumat: [
-          { mata: 'SnB-ST', guru: 'B. FILLYA' },
-          { mata: 'SnB-ST', guru: 'B. FILLYA' },
-          { mata: 'Istirahat 1', guru: '-' },
-          { mata: 'PIPAdS', guru: 'B. INDAH' },
-          { mata: 'PIPAdS', guru: 'B. INDAH' },
-          { mata: 'Istirahat 2', guru: '-' },
-          { mata: 'PIPAdS', guru: 'B. INDAH' }
+          { waktu: '06.45 - 07.45', mata: 'KKRD', guru: 'Ridwan Mudakir, S.Kom' },
+          { waktu: '07.45 - 08.45', mata: 'KKRD', guru: 'Ridwan Mudakir, S.Kom' },
+          { waktu: '08.45 - 09.00', mata: 'Istirahat', guru: '-' },
+          { waktu: '09.00 - 10.00', mata: 'KKRD', guru: 'Ridwan Mudakir, S.Kom' },
+          { waktu: '10.00 - 11.00', mata: 'KKRD', guru: 'Ridwan Mudakir, S.Kom' }
         ],
         Sabtu: [
-          { mata: 'Informatika', guru: 'P. FATCHIANO' },
-          { mata: 'Informatika', guru: 'P. FATCHIANO' },
-          { mata: 'Istirahat 1', guru: '-' },
-          { mata: 'PIPAdS', guru: 'B. INDAH' },
-          { mata: 'PIPAdS', guru: 'B. INDAH' },
-          { mata: 'Istirahat 2', guru: '-' },
-          { mata: 'PIPAdS', guru: 'B. INDAH' }
+          { waktu: '06.45 - 07.45', mata: 'MPPRDPG', guru: 'Muh. Faqihuddin Assholih, S.Kom' },
+          { waktu: '07.45 - 08.45', mata: 'MPPRDPG', guru: 'Muh. Faqihuddin Assholih, S.Kom' },
+          { waktu: '08.45 - 09.00', mata: 'Istirahat', guru: '-' },
+          { waktu: '09.00 - 10.00', mata: 'MPPRDPG', guru: 'Muh. Faqihuddin Assholih, S.Kom' }
         ]
       }
     }
@@ -148,7 +147,6 @@
         { petugas: 'Alexa', catatan: '-' },
         { petugas: 'Aretha', catatan: '-' },
         { petugas: 'Atha', catatan: '-' },
-        { petugas: 'Celvin', catatan: '-' },
         { petugas: 'Gilang', catatan: '-' },
         { petugas: 'Safika', catatan: '-' }
       ],
@@ -229,7 +227,9 @@
 
   function setParityLabel(parity) {
     const label = document.getElementById('parityLabel');
-    if (label) label.textContent = `Minggu: ${parity === 'ganjil' ? 'Ganjil' : 'Genap'}`;
+    if (!label) return;
+    const ruang = scheduleData.ruang?.[parity] || '-';
+    label.textContent = `Minggu: ${parity === 'ganjil' ? 'Ganjil' : 'Genap'} · Ruang ${ruang}`;
   }
 
   function getSelectedParity() {
@@ -251,13 +251,13 @@
 
     tbody.innerHTML = '';
 
-    const jams = scheduleData.jams || [];
-    jams.forEach((jam, rowIdx) => {
+    const sesi = scheduleData.sesi || [];
+    sesi.forEach((label, rowIdx) => {
       const tr = document.createElement('tr');
 
-      const tdJam = document.createElement('td');
-      tdJam.textContent = jam;
-      tr.appendChild(tdJam);
+      const tdSesi = document.createElement('td');
+      tdSesi.textContent = label;
+      tr.appendChild(tdSesi);
 
       days.forEach((dayName) => {
         const td = document.createElement('td');
@@ -265,10 +265,12 @@
         const cell = dayArr[rowIdx] || null;
 
         if (cell) {
+          const fullName = legend[cell.mata] || '';
           td.innerHTML = `
             <span class="schedule-subject">
-              <span class="mata">${cell.mata ?? '-'}</span>
-              <span class="guru">${cell.guru ? `⟡ ${cell.guru}` : ''}</span>
+              <span class="waktu" style="display:block;font-size:0.75em;opacity:0.65;">${cell.waktu ?? ''}</span>
+              <span class="mata" title="${fullName}">${cell.mata ?? '-'}</span>
+              <span class="guru">${cell.guru && cell.guru !== '-' ? `⟡ ${cell.guru}` : ''}</span>
             </span>
           `;
         } else {
@@ -334,4 +336,3 @@
     }
   });
 })();
-

@@ -774,9 +774,9 @@ body {
 section {
   position: relative;
   padding: clamp(72px, 8vh, 100px) 5% clamp(54px, 6vh, 96px);
-  scroll-margin-top: 92px;
+  scroll-margin-top: 100px;
   max-width: var(--container);
-  margin: 0 auto;
+  margin: 00 auto;
 }
 
 /* Page wrapper (for pages without hero) */
@@ -1154,12 +1154,12 @@ main .video-section {
 }
 
 .video-wrapper iframe {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100% !important;
   height: 100% !important;
-  border: none;
+ 
 }
 
 .video-info {
